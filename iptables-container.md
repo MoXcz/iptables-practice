@@ -1,6 +1,6 @@
 # `iptabes` inside containers
 
-A container is managed by Docker (when using Docker of course), which will make networking work differently from the host namespace and netfilter (which is framework used by `iptables` to define rules).
+A container is managed by Docker (when using Docker of course), which will make networking work differently from the host namespace and Netfilter (which is the framework used by `iptables` to define rules).
 
 For the most part all rules defined inside the container are isolated inside the container (which is expected from a container), so for testing practices they work rather well.
 
@@ -14,7 +14,7 @@ Docker *akshually* creates different rules under the `DOCKER` chain in the `NAT`
 sudo iptables -t nat -L -n # list the rules of NAT table
 ```
 
-> For more info on what the command above does the `man` page says: *Please note that it (the command above) is often used with the `-n` option, in order to avoid long reverse DNS lookups. It is legal to specify the `-Z` (zero) option as well, in which case the chain(s) will be atomically listed and zeroed. The exact output is affected by the other arguments given. The exact rules are suppressed until you use `iptables -L -v`
+> For more info on what the command above does the `man` page says: *Please note that it (the command above) is often used with the `-n` option, in order to avoid long reverse DNS lookups. It is legal to specify the `-Z` (zero) option as well, in which case the chain(s) will be atomically listed and zeroed. The exact output is affected by the other arguments given. The exact rules are suppressed until you use `iptables -L -v`*
 
 > [!WARNING]
 > Make your own research in this topic, consider this the ramblings of a student.
