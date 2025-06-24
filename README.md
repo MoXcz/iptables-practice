@@ -2,7 +2,7 @@
 
 `iptables` is a firewall utility for managing network traffic using Netfilter modules to configure firewall rules and/or chains. This repo will contain (hopefully) some small examples of how `iptables` can be used to block/allow connections.
 
-> Note that because this is done with a container there could be some differences to a bare-metal/VM environment, read more [[./iptables-container.md]
+> Note that because this is done with a container there could be some differences to a bare-metal/VM environment, read more [iptables-container](./iptables-container.md)
 
 ```sh
 docker build . -t iptables-practice
