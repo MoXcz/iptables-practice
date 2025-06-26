@@ -32,4 +32,3 @@ curl http://localhost:8080
 # should load the welcome page again
 iptables --policy INPUT ACCEPT
 ```
-
