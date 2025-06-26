@@ -4,7 +4,13 @@
 
 > Note that because this is done with a container there could be some differences to a bare-metal/VM environment, read more [iptables-container](./iptables-container.md)
 
+To setup the container:
+
 ```sh
+# clone repo
+git clone https://github.com/MoXcz/iptables-practice
+cd iptables-practice
+
 docker build . -t iptables-practice
 # for testing
 docker run -d --rm --name nginx-iptables --privileged -p 8080:80 iptables-practice:latest
@@ -18,7 +24,7 @@ docker exec -it nginx-iptables bash
 Before doing anything else, test that it's possible to `GET` the expected `nginx` welcome page:
 
 ```sh
-curl http://localhost:8080 # as defined in the port forwarding above
+curl http://localhost:8080 # as defined in the port mapping above
 ```
 
 Inside the container it's now possible to set different `iptables` rules. A clear example is setting the `INPUT` chain to `DROP`, which will not allow any incoming traffic, essentially blocking connections made to the `nginx` web server:
@@ -32,3 +38,5 @@ curl http://localhost:8080
 # should load the welcome page again
 iptables --policy INPUT ACCEPT
 ```
+
+[> Next](./iptables.md)
