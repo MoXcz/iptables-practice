@@ -10,7 +10,7 @@ Some options to have in mind while using `iptables`:
 
 And now with the explanation. One of the most important options to have in mind when setting rules is `iptables -t <table> -L` to print all the rules of a specific *table* (detailed definition and list of tables can be found [here](./iptables-tables.md))
 
-> # The output of these commands may change drastically when there's some other interface installed (UFW, firewalld, etc.)
+> The output of these commands may change drastically when there's some other interface installed (UFW, firewalld, etc.)
 
 ```sh
 iptables -L                # print all rules of default table (filter table)
